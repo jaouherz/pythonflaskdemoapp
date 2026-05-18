@@ -1,0 +1,28 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+    flask-example primes
+{% endblock %}
+
+{% block content %}
+<div class="intro">
+        {% if n %}
+            {% if isPrime is true %}
+        <h2 class="text-center">{{n}} is a prime number.</h2>
+            {% else %}
+        <h2 class="text-center">{{n}} is not a prime number.</h2>
+            {% endif %}
+        {% else  %}
+        <h2 class="text-center">Please provide a number that should be checked for the prime property!</h2>
+        {% endif %}
+        <p class="text-center">To change the number that should be checked just access the following URL with a natural number: /isPrime/<strong>&lt;n&gt;</strong></p>
+    </div>
+    <div class="buttons">
+        <a class="btn btn-primary" role="button" href="/isPrime/10" style="background: var(--danger);">10</a>
+        <a class="btn btn-primary" role="button" href="/isPrime/11" style="background: var(--danger);">11</a>
+        <a class="btn btn-primary" role="button" href="/isPrime/529" style="background: var(--danger);">529</a>
+        <a class="btn btn-primary" role="button" href="/isPrime/941" style="background: var(--danger);">941</a>
+        <a class="btn btn-primary" role="button" href="/isPrime/2000" style="background: var(--danger);">1000</a>
+    </div>
+    <p class="text-center">You can also use a predefined button.</p>
+{% endblock %}
